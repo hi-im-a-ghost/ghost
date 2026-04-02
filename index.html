@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghost — Anti WebRTC Leaker</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--black:#111;--white:#fff;--gray:#888;--light:#f7f7f7;--border:#e8e8e8}
+    body{font-family:'Nunito',sans-serif;background:var(--white);color:var(--black);min-height:100vh}
+
+    nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:1px solid var(--border)}
+    .logo{font-size:18px;font-weight:800;letter-spacing:.15em}
+    .nav-badge{font-size:11px;font-weight:700;background:var(--black);color:var(--white);padding:4px 12px;border-radius:99px;letter-spacing:.05em}
+
+    hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:80px 24px 60px}
+    .ghost-big{width:90px;height:90px;margin-bottom:32px}
+    h1{font-size:48px;font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px}
+    .sub{font-size:18px;color:var(--gray);font-weight:600;max-width:420px;line-height:1.6;margin-bottom:40px}
+
+    .steps{background:var(--light);border-radius:24px;padding:40px;max-width:560px;width:100%;margin:0 auto 40px;text-align:left}
+    .steps h2{font-size:14px;font-weight:700;letter-spacing:.1em;color:var(--gray);text-transform:uppercase;margin-bottom:24px}
+    .step{display:flex;gap:16px;align-items:flex-start;margin-bottom:20px}
+    .step:last-child{margin-bottom:0}
+    .step-num{width:28px;height:28px;border-radius:50%;background:var(--black);color:var(--white);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .step-text{font-size:15px;font-weight:600;line-height:1.5}
+    .step-text span{color:var(--gray);font-weight:400;display:block;font-size:13px;margin-top:2px}
+    code{background:var(--border);padding:2px 8px;border-radius:6px;font-family:monospace;font-size:13px;color:var(--black)}
+
+    .cta{display:inline-flex;align-items:center;gap:10px;background:var(--black);color:var(--white);padding:16px 32px;border-radius:14px;font-size:15px;font-weight:700;text-decoration:none;transition:.15s;margin-bottom:12px}
+    .cta:hover{opacity:.85;transform:scale(1.02)}
+    .cta:active{transform:scale(.98)}
+    .cta-note{font-size:12px;color:var(--gray);font-weight:600}
+
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:700px;width:100%;margin:60px auto;padding:0 24px}
+    .feat{background:var(--light);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px}
+    .feat-icon{font-size:24px}
+    .feat-title{font-size:14px;font-weight:700}
+    .feat-desc{font-size:13px;color:var(--gray);font-weight:600;line-height:1.5}
+
+    footer{text-align:center;padding:32px;border-top:1px solid var(--border);font-size:13px;color:var(--gray);font-weight:600}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="logo">ghost</span>
+    <span class="nav-badge">Anti WebRTC Leaker</span>
+  </nav>
+
+  <hero>
+    <svg class="ghost-big" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 4C17.6 4 6 15.6 6 30v34l8-8 8 8 8-8 8 8 8-8 8 8V30C58 15.6 46.4 4 32 4z" stroke="#111" stroke-width="3.5" stroke-linejoin="round"/>
+      <circle cx="22" cy="30" r="4" fill="#111"/>
+      <circle cx="42" cy="30" r="4" fill="#111"/>
+    </svg>
+
+    <h1>Navega sin<br/>dejar rastro.</h1>
+    <p class="sub">Ghost bloquea los WebRTC leaks que exponen tu IP real aunque uses una VPN.</p>
+
+    <div class="steps">
+      <h2>Cómo instalar</h2>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          Descarga la extensión
+          <span>Guarda y descomprime el archivo <code>ghost.zip</code> en tu computadora</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          Abre Chrome y ve a extensiones
+          <span>Escribe <code>chrome://extensions</code> en la barra de direcciones</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          Activa el modo desarrollador
+          <span>Botón arriba a la derecha en la página de extensiones</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          Carga la extensión
+          <span>Click en "Cargar descomprimida" y selecciona la carpeta <code>ghost</code></span>
+        </div>
+      </div>
+    </div>
+
+    <a class="cta" href="ghost.zip" download="ghost.zip">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Descargar Ghost
+    </a>
+    <p class="cta-note">Gratis · Solo Chrome · Sin datos recolectados</p>
+  </hero>
+
+  <div class="features">
+    <div class="feat">
+      <span class="feat-icon">🛡️</span>
+      <span class="feat-title">Anti WebRTC Leak</span>
+      <span class="feat-desc">Bloquea la técnica que expone tu IP real aunque uses una VPN.</span>
+    </div>
+    <div class="feat">
+      <span class="feat-icon">⚡</span>
+      <span class="feat-title">Ultra ligero</span>
+      <span class="feat-desc">No consume recursos ni ralentiza tu navegador.</span>
+    </div>
+    <div class="feat">
+      <span class="feat-icon">🔒</span>
+      <span class="feat-title">Sin datos</span>
+      <span class="feat-desc">No recolectamos, vendemos ni compartimos ningún dato tuyo.</span>
+    </div>
+    <div class="feat">
+      <span class="feat-icon">👻</span>
+      <span class="feat-title">Un click</span>
+      <span class="feat-desc">Activa y desactiva la protección con un solo click.</span>
+    </div>
+  </div>
+
+  <footer>ghost</footer>
+
+</body>
+</html>
